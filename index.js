@@ -1,6 +1,8 @@
 import '~/fixture';
 import $ from 'jquery';
 
+import 'bootstrap/less/bootstrap.less';
+
 $.get({ url: '/recipes', dataType: 'json'})
   .then(function(recipes) {
     let $app = $('#app');
@@ -8,6 +10,6 @@ $.get({ url: '/recipes', dataType: 'json'})
     $app.empty();
 
     recipes.forEach(function(recipe) {
-      $app.append(`<div>${recipe.name}</div>`);
+      $app.append(`<h2 class="text-center">${recipe.name}</h2>`);
     });
   });
